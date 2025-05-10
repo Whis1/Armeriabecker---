@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { weapons, getComponentById } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Weapon } from 'lucide-react';
+import { Axe } from 'lucide-react';
 
 const Weapons = () => {
   const formatComponentName = (id: string) => {
@@ -29,7 +29,7 @@ const Weapons = () => {
               <Card key={weapon.id} className="vintage-card animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-4">
                   <div className="flex items-center justify-center mb-4 h-40 wood-panel">
-                    <Weapon className="h-20 w-20" />
+                    <Axe className="h-20 w-20" />
                   </div>
                   <h3 className="font-serif font-bold text-xl mb-2 text-armeria-wood">{weapon.name}</h3>
                   
