@@ -1,18 +1,17 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Gun, Hammer, Box, Database } from 'lucide-react';
+import { Weapon, Hammer, Package, Database } from 'lucide-react';
 
 const Index = () => {
   const categories = [
     {
       title: "Armi",
       description: "Catalogo completo delle armi disponibili",
-      icon: Gun,
+      icon: Weapon,
       link: "/weapons",
       color: "bg-gradient-to-br from-armeria-wood to-armeria-dark"
     },
@@ -26,7 +25,7 @@ const Index = () => {
     {
       title: "Materiali",
       description: "Listino dei materiali necessari",
-      icon: Box,
+      icon: Package,
       link: "/materials",
       color: "bg-gradient-to-br from-armeria-dark to-armeria-wood"
     },
@@ -79,7 +78,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="vintage-card flex flex-col items-center p-6">
               <div className="wood-panel w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Gun className="h-8 w-8" />
+                <Weapon className="h-8 w-8" />
               </div>
               <h3 className="font-serif font-bold text-xl mb-2">Revolver Double Action</h3>
               <p className="text-armeria-dark/80">Precisione e affidabilità in un design classico</p>
@@ -87,7 +86,7 @@ const Index = () => {
             
             <div className="vintage-card flex flex-col items-center p-6">
               <div className="wood-panel w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Gun className="h-8 w-8" />
+                <Weapon className="h-8 w-8" />
               </div>
               <h3 className="font-serif font-bold text-xl mb-2">Carabine Repeater</h3>
               <p className="text-armeria-dark/80">Potenza e velocità per ogni situazione</p>
@@ -95,7 +94,7 @@ const Index = () => {
             
             <div className="vintage-card flex flex-col items-center p-6">
               <div className="wood-panel w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Gun className="h-8 w-8" />
+                <Weapon className="h-8 w-8" />
               </div>
               <h3 className="font-serif font-bold text-xl mb-2">Henry Repeater</h3>
               <p className="text-armeria-dark/80">Il massimo dell'artigianato e delle prestazioni</p>

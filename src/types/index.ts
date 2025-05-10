@@ -1,40 +1,38 @@
 
-export type MaterialType = {
+export interface MaterialType {
   id: string;
   name: string;
   price: number;
-};
+}
 
-export type ComponentType = {
+export interface ComponentMaterial {
+  materialId?: string;
+  componentId?: string;
+  quantity: number;
+}
+
+export interface ComponentType {
   id: string;
   name: string;
-  materials: {
-    materialId: string;
-    quantity: number;
-  }[];
   variant?: string;
-};
+  materials: ComponentMaterial[];
+}
 
-export type WeaponType = {
+export interface WeaponComponent {
+  componentId: string;
+  quantity: number;
+}
+
+export interface WeaponType {
   id: string;
   name: string;
-  components: {
-    componentId: string;
-    quantity: number;
-  }[];
-  image?: string;
-};
+  components: WeaponComponent[];
+  image: string;
+}
 
-export type AmmoType = {
+export interface AmmoType {
   id: string;
   name: string;
-  materials: {
-    materialId: string;
-    quantity: number;
-  }[];
   count: number;
-};
-
-export type ItemType = MaterialType | ComponentType | WeaponType | AmmoType;
-
-export type Category = "weapons" | "components" | "materials" | "ammo";
+  materials: ComponentMaterial[];
+}
