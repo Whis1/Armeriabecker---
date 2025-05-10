@@ -4,12 +4,23 @@ import { Card, CardContent } from '@/components/ui/card';
 import { components, getMaterialById } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { hammer } from 'lucide-react';
+import { Hammer } from 'lucide-react';
 
 const Components = () => {
   const formatMaterialName = (id: string) => {
     const material = getMaterialById(id);
     return material ? material.name : id;
+  };
+
+  // Helper function to handle component or material
+  const formatResourceName = (item: { materialId?: string; componentId?: string }) => {
+    if (item.materialId) {
+      return formatMaterialName(item.materialId);
+    }
+    if (item.componentId) {
+      return item.componentId; // This could be enhanced to lookup component names as well
+    }
+    return "Unknown Resource";
   };
 
   const groupedComponents = components.reduce((acc: Record<string, typeof components>, component) => {
@@ -41,7 +52,7 @@ const Components = () => {
                     <CardContent className="p-4">
                       <div className="flex items-center mb-3">
                         <div className="bg-armeria-wood/80 text-white p-2 rounded-md mr-3">
-                          <hammer className="h-5 w-5" />
+                          <Hammer className="h-5 w-5" />
                         </div>
                         <h3 className="font-serif font-medium text-lg">
                           {component.variant ? `${component.name} (${component.variant})` : component.name}
@@ -53,7 +64,7 @@ const Components = () => {
                         <ul className="list-disc list-inside text-sm text-armeria-dark/80">
                           {component.materials.map((material, matIndex) => (
                             <li key={matIndex}>
-                              {material.quantity}x {material.materialId ? formatMaterialName(material.materialId) : material.componentId}
+                              {material.quantity}x {formatResourceName(material)}
                             </li>
                           ))}
                         </ul>

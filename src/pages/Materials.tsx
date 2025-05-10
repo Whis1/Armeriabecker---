@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { materials } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { box } from 'lucide-react';
+import { Box } from 'lucide-react';
 
 const Materials = () => {
   return (
@@ -30,7 +30,7 @@ const Materials = () => {
                   {materials.map((material, index) => (
                     <tr key={material.id} className={index % 2 === 0 ? 'bg-transparent' : 'bg-armeria-brass/5'}>
                       <td className="px-4 py-3 text-left flex items-center">
-                        <box className="h-4 w-4 mr-2 text-armeria-wood/70" />
+                        <Box className="h-4 w-4 mr-2 text-armeria-wood/70" />
                         <span>{material.name}</span>
                       </td>
                       <td className="px-4 py-3 text-right">${material.price.toFixed(2)}</td>
@@ -52,7 +52,7 @@ const Materials = () => {
                 <div className="grid grid-cols-2 gap-2">
                   {materials.filter(m => m.price <= 0.01).slice(0, 6).map((material) => (
                     <div key={material.id} className="flex items-center p-2 bg-armeria-brass/10 rounded">
-                      <box className="h-4 w-4 mr-2 text-armeria-wood" />
+                      <Box className="h-4 w-4 mr-2 text-armeria-wood" />
                       <span>{material.name}</span>
                     </div>
                   ))}
@@ -71,7 +71,7 @@ const Materials = () => {
                   {materials.filter(m => m.price > 0.01).map((material) => (
                     <div key={material.id} className="flex items-center justify-between p-3 bg-armeria-wood/10 rounded">
                       <div className="flex items-center">
-                        <box className="h-4 w-4 mr-2 text-armeria-wood" />
+                        <Box className="h-4 w-4 mr-2 text-armeria-wood" />
                         <span>{material.name}</span>
                       </div>
                       <span className="font-medium">${material.price.toFixed(2)}</span>

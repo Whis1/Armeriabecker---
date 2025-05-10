@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ammo, getMaterialById } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { package as PackageIcon } from 'lucide-react';
+import { Package } from 'lucide-react';
 
 const Ammo = () => {
   const formatMaterialName = (id: string) => {
@@ -30,7 +30,7 @@ const Ammo = () => {
                 <CardContent className="p-4">
                   <div className="flex items-center mb-4">
                     <div className="bg-armeria-wood/80 text-white p-2 rounded-md mr-3">
-                      <PackageIcon className="h-5 w-5" />
+                      <Package className="h-5 w-5" />
                     </div>
                     <h3 className="font-serif font-bold text-lg">
                       {ammoItem.name} x{ammoItem.count}
