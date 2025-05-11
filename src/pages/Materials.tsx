@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { materials } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -39,47 +38,6 @@ const Materials = () => {
                 </tbody>
               </table>
             </div>
-          </div>
-          
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="vintage-card animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              <CardContent className="p-6">
-                <h2 className="font-serif font-bold text-xl mb-4 text-armeria-wood">Materiali di base</h2>
-                <p className="text-armeria-dark/80 mb-4">
-                  I materiali di base sono gli elementi fondamentali per la creazione di componenti più complessi.
-                  Questi sono facilmente reperibili e hanno un costo contenuto.
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  {materials.filter(m => m.price <= 0.01).slice(0, 6).map((material) => (
-                    <div key={material.id} className="flex items-center p-2 bg-armeria-brass/10 rounded">
-                      <Box className="h-4 w-4 mr-2 text-armeria-wood" />
-                      <span>{material.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="vintage-card animate-fade-in" style={{ animationDelay: "0.3s" }}>
-              <CardContent className="p-6">
-                <h2 className="font-serif font-bold text-xl mb-4 text-armeria-wood">Materiali recuperati</h2>
-                <p className="text-armeria-dark/80 mb-4">
-                  I materiali recuperati sono ottenuti dal riciclo di oggetti danneggiati. 
-                  Hanno un valore maggiore ma possono fornire componenti importanti.
-                </p>
-                <div className="grid grid-cols-1 gap-2">
-                  {materials.filter(m => m.price > 0.01).map((material) => (
-                    <div key={material.id} className="flex items-center justify-between p-3 bg-armeria-wood/10 rounded">
-                      <div className="flex items-center">
-                        <Box className="h-4 w-4 mr-2 text-armeria-wood" />
-                        <span>{material.name}</span>
-                      </div>
-                      <span className="font-medium">${material.price.toFixed(2)}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </main>
