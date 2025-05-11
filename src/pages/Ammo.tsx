@@ -6,13 +6,19 @@ import { Button } from '@/components/ui/button';
 import { ammo, getMaterialById } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Package } from 'lucide-react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const Ammo = () => {
   const formatMaterialName = (id: string) => {
     const material = getMaterialById(id);
     if (id === "scrap") return "Rottami";
     return material ? material.name : id;
+  };
+
+  // Mappa degli ID delle munizioni alle rispettive immagini
+  const ammoImages: Record<string, string> = {
+    "revolver_ammo": "/lovable-uploads/19ae788e-f70c-40e7-8638-31bd74f29e3e.png",
+    "repeater_ammo": "/lovable-uploads/1e21ee64-b1e3-4347-aed3-4a86cd93aafa.png"
   };
 
   return (
@@ -30,8 +36,14 @@ const Ammo = () => {
               <Card key={ammoItem.id} className="vintage-card animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-4">
                   <div className="flex items-center mb-4">
-                    <div className="bg-armeria-wood/80 text-white p-2 rounded-md mr-3">
-                      <Package className="h-5 w-5" />
+                    <div className="mr-4 w-12 h-12 flex items-center justify-center">
+                      <AspectRatio ratio={1/1} className="bg-transparent">
+                        <img 
+                          src={ammoImages[ammoItem.id]} 
+                          alt={ammoItem.name}
+                          className="object-contain"
+                        />
+                      </AspectRatio>
                     </div>
                     <h3 className="font-serif font-bold text-lg">
                       {ammoItem.name} x{ammoItem.count}
