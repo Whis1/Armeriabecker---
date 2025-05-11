@@ -1,3 +1,4 @@
+
 import { MaterialType, ComponentType, WeaponType, AmmoType } from "../types";
 
 export const materials: MaterialType[] = [
@@ -124,7 +125,7 @@ export const components: ComponentType[] = [
 export const weapons: WeaponType[] = [
   {
     id: "revolver_double_action",
-    name: "Revolver Double Action",
+    name: "Revolver a Doppia Azione",
     components: [
       { componentId: "processed_minerals", quantity: 5 },
       { componentId: "work_tools_1", quantity: 5 },
@@ -134,7 +135,7 @@ export const weapons: WeaponType[] = [
   },
   {
     id: "carbine_repeater",
-    name: "Carabine Repeater",
+    name: "Carabina a Ripetizione",
     components: [
       { componentId: "processed_minerals", quantity: 10 },
       { componentId: "work_tools_1", quantity: 10 },
@@ -144,7 +145,7 @@ export const weapons: WeaponType[] = [
   },
   {
     id: "henry_repeater",
-    name: "Henry Repeater",
+    name: "Ripetitore Henry",
     components: [
       { componentId: "processed_minerals", quantity: 40 },
       { componentId: "work_tools_1", quantity: 30 },
@@ -157,7 +158,7 @@ export const weapons: WeaponType[] = [
 export const ammo: AmmoType[] = [
   {
     id: "revolver_ammo",
-    name: "Revoler Ammo Normal",
+    name: "Munizioni Revolver Normali",
     count: 50,
     materials: [
       { materialId: "scrap", quantity: 10 },
@@ -167,7 +168,7 @@ export const ammo: AmmoType[] = [
   },
   {
     id: "repeater_ammo",
-    name: "Repeater Ammo Normal",
+    name: "Munizioni Ripetitore Normali",
     count: 30,
     materials: [
       { materialId: "scrap", quantity: 30 },

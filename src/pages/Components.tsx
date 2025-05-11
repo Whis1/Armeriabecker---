@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { components, getMaterialById } from '@/data/armoryData';
+import { components, getMaterialById, getComponentById } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Hammer } from 'lucide-react';
@@ -12,15 +12,16 @@ const Components = () => {
     return material ? material.name : id;
   };
 
-  // Helper function to handle component or material
+  // Funzione helper per gestire componente o materiale
   const formatResourceName = (item: { materialId?: string; componentId?: string }) => {
     if (item.materialId) {
       return formatMaterialName(item.materialId);
     }
     if (item.componentId) {
-      return item.componentId; // This could be enhanced to lookup component names as well
+      const component = getComponentById(item.componentId);
+      return component ? component.name : item.componentId;
     }
-    return "Unknown Resource";
+    return "Risorsa Sconosciuta";
   };
 
   const groupedComponents = components.reduce((acc: Record<string, typeof components>, component) => {

@@ -109,8 +109,8 @@ const Search = () => {
                           <ul className="text-sm list-disc list-inside text-armeria-dark/80">
                             {item.materials.map((mat: any, matIndex: number) => (
                               <li key={matIndex}>
-                                {mat.materialId ? `${mat.quantity}x ${mat.materialId}` : ''}
-                                {mat.componentId ? `${mat.quantity}x ${mat.componentId}` : ''}
+                                {mat.quantity}x {mat.materialId ? formatMaterialName(mat.materialId) : ''}
+                                {mat.componentId ? getComponentById(mat.componentId)?.name || mat.componentId : ''}
                               </li>
                             ))}
                           </ul>
@@ -123,7 +123,7 @@ const Search = () => {
                           <ul className="text-sm list-disc list-inside text-armeria-dark/80">
                             {item.components.map((comp: any, compIndex: number) => (
                               <li key={compIndex}>
-                                {comp.componentId ? `${comp.quantity}x ${comp.componentId}` : ''}
+                                {comp.quantity}x {getComponentById(comp.componentId)?.name || comp.componentId}
                               </li>
                             ))}
                           </ul>
