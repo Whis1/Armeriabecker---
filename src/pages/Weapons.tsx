@@ -30,7 +30,7 @@ const Weapons = () => {
                   <div className="flex items-center justify-center mb-4 h-40 wood-panel bg-black">
                     {weapon.image && (
                       <img 
-                        src={`/lovable-uploads/${getImageFilename(weapon.id)}`} 
+                        src={weapon.image} 
                         alt={weapon.name} 
                         className="h-32 object-contain"
                       />
@@ -64,20 +64,6 @@ const Weapons = () => {
       <Footer />
     </div>
   );
-};
-
-// Helper function to get the correct image filename based on weapon ID
-const getImageFilename = (weaponId: string): string => {
-  switch (weaponId) {
-    case "revolver_double_action":
-      return "bf5b0a35-d26f-4e3c-b7bb-433ca4adc998.png";
-    case "carbine_repeater":
-      return "ac14308d-80de-4d6b-ad03-27d6631bd010.png";
-    case "henry_repeater":
-      return "b9691565-9957-4009-b106-fb47d7e68e54.png";
-    default:
-      return "";
-  }
 };
 
 export default Weapons;
