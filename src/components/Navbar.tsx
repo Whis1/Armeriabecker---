@@ -1,22 +1,11 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search } from 'lucide-react';
-import { Input } from './ui/input';
-import { Button } from './ui/button';
 import { cn } from '@/lib/utils';
 
 export function Navbar() {
-  const [searchTerm, setSearchTerm] = useState('');
   const location = useLocation();
   
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchTerm.trim()) {
-      window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
-    }
-  };
-
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Armi', path: '/weapons' },
@@ -49,22 +38,18 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
+            <Link
+              to="/search"
+              className={cn(
+                "px-3 py-1 rounded-md text-sm font-medium transition-colors",
+                location.pathname === "/search"
+                  ? "bg-armeria-brass/20 text-armeria-brass"
+                  : "hover:bg-armeria-brass/10 hover:text-armeria-brass"
+              )}
+            >
+              Ricerca
+            </Link>
           </div>
-          
-          <form onSubmit={handleSearchSubmit} className="flex items-center w-full md:w-auto">
-            <div className="relative w-full md:w-auto flex">
-              <Input
-                type="text"
-                placeholder="Cerca..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pr-10 bg-armeria-paper/80 text-armeria-dark w-full md:w-64"
-              />
-              <Button type="submit" variant="ghost" size="icon" className="absolute right-0 top-0 h-full">
-                <Search className="h-4 w-4 text-armeria-dark" />
-              </Button>
-            </div>
-          </form>
         </div>
       </div>
     </nav>

@@ -1,24 +1,12 @@
 
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Axe, Hammer, Package, Search } from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { Axe, Hammer, Package } from 'lucide-react';
 
 const Index = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const navigate = useNavigate();
-  
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchTerm.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
-    }
-  };
-
   const categories = [
     {
       title: "Armi",
@@ -48,25 +36,6 @@ const Index = () => {
       <Navbar />
       
       <main className="flex-grow container mx-auto px-4 py-8">
-        <section className="mb-8 text-center animate-fade-in">
-          <form onSubmit={handleSearch} className="max-w-xl mx-auto mb-8">
-            <div className="flex gap-2 vintage-card p-4 shadow-md">
-              <Input
-                type="text"
-                placeholder="Cerca armi, componenti, materiali..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="flex-grow bg-white/80"
-                autoFocus
-              />
-              <Button type="submit" className="bg-armeria-wood hover:bg-armeria-wood/80">
-                <Search className="h-4 w-4 mr-2" />
-                Cerca
-              </Button>
-            </div>
-          </form>
-        </section>
-        
         <section className="mb-12 text-center vintage-card animate-fade-in">
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-armeria-wood">
@@ -90,23 +59,6 @@ const Index = () => {
                   </Card>
                 </Link>
               ))}
-            </div>
-          </div>
-        </section>
-        
-        <section className="text-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          <div className="vintage-card p-8">
-            <h2 className="text-3xl font-serif font-bold mb-4 text-armeria-wood">Esplora il Database</h2>
-            <p className="text-armeria-dark/80 mb-6 max-w-2xl mx-auto">
-              Scopri tutti i dettagli delle nostre armi, componenti e materiali necessari per la fabbricazione.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button asChild className="bg-armeria-wood hover:bg-armeria-wood/80 text-white">
-                <Link to="/weapons">Catalogo Armi</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-armeria-brass hover:bg-armeria-brass/10">
-                <Link to="/search">Ricerca Avanzata</Link>
-              </Button>
             </div>
           </div>
         </section>
