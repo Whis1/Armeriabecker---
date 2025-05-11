@@ -6,13 +6,6 @@ import { cn } from '@/lib/utils';
 export function Navbar() {
   const location = useLocation();
   
-  const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'Armi', path: '/weapons' },
-    { name: 'Componenti', path: '/components' },
-    { name: 'Materiali', path: '/materials' },
-  ];
-
   return (
     <nav className="border-b border-armeria-brass/30 bg-armeria-wood/90 text-armeria-paper py-2">
       <div className="container mx-auto px-4">
@@ -24,31 +17,14 @@ export function Navbar() {
           </Link>
           
           <div className="flex items-center gap-2 md:gap-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={cn(
-                  "px-3 py-1 rounded-md text-sm font-medium transition-colors",
-                  location.pathname === item.path
-                    ? "bg-armeria-brass/20 text-armeria-brass"
-                    : "hover:bg-armeria-brass/10 hover:text-armeria-brass"
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Link
-              to="/search"
-              className={cn(
-                "px-3 py-1 rounded-md text-sm font-medium transition-colors",
-                location.pathname === "/search"
-                  ? "bg-armeria-brass/20 text-armeria-brass"
-                  : "hover:bg-armeria-brass/10 hover:text-armeria-brass"
-              )}
+            <a
+              href="https://discord.gg/nhDCbzVd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-1 rounded-md text-sm font-medium transition-colors bg-[#5865F2] hover:bg-[#4752c4] text-white"
             >
-              Ricerca
-            </Link>
+              Discord
+            </a>
           </div>
         </div>
       </div>
