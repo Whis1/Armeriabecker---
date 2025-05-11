@@ -29,7 +29,7 @@ const Footer = () => {
               </span>
             </a>
           </div>
-          <p className="text-sm text-armeria-paper/70 mt-4">&copy; {new Date().getFullYear()} Armeria Becker. Tutti i diritti riservati.</p>
+          <p className="text-sm text-armeria-paper/70 mt-4">&copy; {new Date().getFullYear()} Armeria Becker. Tutti i diritti riservati. Website by Daishinkan</p>
         </div>
       </div>
     </footer>
