@@ -51,7 +51,7 @@ const Weapons = () => {
         
         <div className="text-center">
           <Button asChild className="bg-armeria-wood hover:bg-armeria-wood/80">
-            <Link to="/ammo">Visualizza Munizioni</Link>
+            <Link to="/">Torna in Home</Link>
           </Button>
         </div>
       </main>

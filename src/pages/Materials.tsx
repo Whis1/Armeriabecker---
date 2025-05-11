@@ -4,6 +4,8 @@ import { materials } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Box } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Materials = () => {
   return (
@@ -38,6 +40,12 @@ const Materials = () => {
                 </tbody>
               </table>
             </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <Button asChild className="bg-armeria-wood hover:bg-armeria-wood/80">
+              <Link to="/">Torna in Home</Link>
+            </Button>
           </div>
         </div>
       </main>

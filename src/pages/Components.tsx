@@ -7,6 +7,8 @@ import Footer from '@/components/Footer';
 import { Hammer, ChevronDown, ChevronUp } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Components = () => {
   const [expandedGroups, setExpandedGroups] = useState<string[]>([]);
@@ -66,7 +68,7 @@ const Components = () => {
                       </div>
                       <h2 className="text-2xl font-serif font-bold text-armeria-wood">{name}</h2>
                       <Badge variant="outline" className="ml-3 bg-armeria-brass/20 text-armeria-dark">
-                        {variants.length} {variants.length === 1 ? 'variante' : 'varianti'}
+                        {variants.length}
                       </Badge>
                     </div>
                   </AccordionTrigger>
@@ -99,6 +101,12 @@ const Components = () => {
                 </AccordionItem>
               ))}
             </Accordion>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <Button asChild className="bg-armeria-wood hover:bg-armeria-wood/80">
+              <Link to="/">Torna in Home</Link>
+            </Button>
           </div>
         </div>
       </main>
