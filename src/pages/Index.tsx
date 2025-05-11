@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Package, Search, Gun, Component, Box } from 'lucide-react';
+import { Package, Search, Shield, Component, Box } from 'lucide-react';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +16,7 @@ const Index = () => {
     {
       title: "Armi",
       description: "Catalogo completo delle armi disponibili",
-      icon: Gun,
+      icon: Shield,
       link: "/weapons",
       color: "bg-gradient-to-br from-armeria-wood to-armeria-dark"
     },
