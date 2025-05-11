@@ -1,4 +1,3 @@
-
 import { MaterialType, ComponentType, WeaponType, AmmoType } from "../types";
 
 export const materials: MaterialType[] = [
@@ -12,7 +11,7 @@ export const materials: MaterialType[] = [
   { id: "coal", name: "Carbone", price: 0.01 },
   { id: "broken_tool", name: "Attrezzo Rotto", price: 0.50 },
   { id: "broken_weapon", name: "Arma Rotta", price: 2.50 },
-  { id: "copper_tube", name: "Tubo di Rame", price: 0.30 },
+  { id: "copper_tube", name: "Tubo di Rame", price: 0.50 },
 ];
 
 export const components: ComponentType[] = [
@@ -125,7 +124,7 @@ export const components: ComponentType[] = [
 export const weapons: WeaponType[] = [
   {
     id: "revolver_double_action",
-    name: "Revolver a Doppia Azione",
+    name: "Double Action Revolver",
     components: [
       { componentId: "processed_minerals", quantity: 5 },
       { componentId: "work_tools_1", quantity: 5 },
@@ -135,7 +134,7 @@ export const weapons: WeaponType[] = [
   },
   {
     id: "carbine_repeater",
-    name: "Carabina a Ripetizione",
+    name: "Carbine Repeater",
     components: [
       { componentId: "processed_minerals", quantity: 10 },
       { componentId: "work_tools_1", quantity: 10 },
@@ -145,7 +144,7 @@ export const weapons: WeaponType[] = [
   },
   {
     id: "henry_repeater",
-    name: "Ripetitore Henry",
+    name: "Henry Repeater",
     components: [
       { componentId: "processed_minerals", quantity: 40 },
       { componentId: "work_tools_1", quantity: 30 },

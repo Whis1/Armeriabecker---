@@ -1,12 +1,17 @@
 
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Axe, Hammer, Package } from 'lucide-react';
+import { Axe, Hammer, Package, Search } from 'lucide-react';
 
 const Index = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+  
   const categories = [
     {
       title: "Armi",
@@ -30,6 +35,13 @@ const Index = () => {
       color: "bg-gradient-to-br from-armeria-dark to-armeria-wood"
     }
   ];
+  
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -37,6 +49,22 @@ const Index = () => {
       
       <main className="flex-grow container mx-auto px-4 py-8">
         <section className="mb-12 text-center vintage-card animate-fade-in">
+          <form onSubmit={handleSearch} className="max-w-xl mx-auto mb-8">
+            <div className="flex gap-2">
+              <Input
+                type="text"
+                placeholder="Cerca armi, componenti, materiali..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="flex-grow bg-white/80 border-armeria-brass/30"
+                autoFocus
+              />
+              <Button type="submit" className="bg-armeria-wood hover:bg-armeria-wood/80">
+                <Search className="h-4 w-4" />
+              </Button>
+            </div>
+          </form>
+          
           <div className="mb-8">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-armeria-wood">
               <span className="header-decoration">Armeria dei fratelli Becker</span>
