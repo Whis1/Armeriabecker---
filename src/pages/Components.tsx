@@ -42,39 +42,41 @@ const Components = () => {
             <span className="header-decoration">Catalogo Componenti</span>
           </h1>
           
-          {Object.entries(groupedComponents).map(([name, variants], groupIndex) => (
-            <div key={name} className="mb-8 animate-fade-in" style={{ animationDelay: `${groupIndex * 0.1}s` }}>
-              <h2 className="text-2xl font-serif font-bold mb-4 text-armeria-wood">{name}</h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {variants.map((component, index) => (
-                  <Card key={`${component.id}-${index}`} className="vintage-card">
-                    <CardContent className="p-4">
-                      <div className="flex items-center mb-3">
-                        <div className="bg-armeria-wood/80 text-white p-2 rounded-md mr-3">
-                          <Hammer className="h-5 w-5" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {Object.entries(groupedComponents).map(([name, variants], groupIndex) => (
+              <div key={name} className="animate-fade-in" style={{ animationDelay: `${groupIndex * 0.1}s` }}>
+                <h2 className="text-2xl font-serif font-bold mb-4 text-armeria-wood">{name}</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {variants.map((component, index) => (
+                    <Card key={`${component.id}-${index}`} className="vintage-card">
+                      <CardContent className="p-4">
+                        <div className="flex items-center mb-3">
+                          <div className="bg-armeria-wood/80 text-white p-2 rounded-md mr-3">
+                            <Hammer className="h-5 w-5" />
+                          </div>
+                          <h3 className="font-serif font-medium text-lg">
+                            {component.variant ? `${component.name} (${component.variant})` : component.name}
+                          </h3>
                         </div>
-                        <h3 className="font-serif font-medium text-lg">
-                          {component.variant ? `${component.name} (${component.variant})` : component.name}
-                        </h3>
-                      </div>
-                      
-                      <div className="mt-3">
-                        <p className="font-medium text-armeria-dark mb-2">Materiali necessari:</p>
-                        <ul className="list-disc list-inside text-sm text-armeria-dark/80">
-                          {component.materials.map((material, matIndex) => (
-                            <li key={matIndex}>
-                              {material.quantity}x {formatResourceName(material)}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                        
+                        <div className="mt-3">
+                          <p className="font-medium text-armeria-dark mb-2">Materiali necessari:</p>
+                          <ul className="list-disc list-inside text-sm text-armeria-dark/80">
+                            {component.materials.map((material, matIndex) => (
+                              <li key={matIndex}>
+                                {material.quantity}x {formatResourceName(material)}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </main>
       

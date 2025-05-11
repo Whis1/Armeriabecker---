@@ -1,4 +1,3 @@
-
 import { MaterialType, ComponentType, WeaponType, AmmoType } from "../types";
 
 export const materials: MaterialType[] = [
@@ -12,6 +11,7 @@ export const materials: MaterialType[] = [
   { id: "coal", name: "Carbone", price: 0.01 },
   { id: "broken_tool", name: "Attrezzo Rotto", price: 0.50 },
   { id: "broken_weapon", name: "Arma Rotta", price: 2.50 },
+  { id: "copper_tube", name: "Tubo di Rame", price: 0.30 },
 ];
 
 export const components: ComponentType[] = [
@@ -87,13 +87,6 @@ export const components: ComponentType[] = [
     name: "Rottami x30", 
     materials: [
       { materialId: "broken_weapon", quantity: 1 },
-    ]
-  },
-  { 
-    id: "copper_tube", 
-    name: "Tubo di Rame", 
-    materials: [
-      { materialId: "copper", quantity: 3 },
     ]
   },
   { 
