@@ -11,6 +11,7 @@ import { Package } from 'lucide-react';
 const Ammo = () => {
   const formatMaterialName = (id: string) => {
     const material = getMaterialById(id);
+    if (id === "scrap") return "Rottami";
     return material ? material.name : id;
   };
 
