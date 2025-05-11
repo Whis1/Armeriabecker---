@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Axe, Hammer, Package, Search, Crosshair } from 'lucide-react';
+import { Package, Search, Gun, Component, Box } from 'lucide-react';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,28 +16,28 @@ const Index = () => {
     {
       title: "Armi",
       description: "Catalogo completo delle armi disponibili",
-      icon: Axe,
+      icon: Gun,
       link: "/weapons",
       color: "bg-gradient-to-br from-armeria-wood to-armeria-dark"
     },
     {
       title: "Munizioni",
       description: "Munizioni per tutte le armi",
-      icon: Crosshair,
+      icon: Component,
       link: "/ammo",
       color: "bg-gradient-to-br from-armeria-dark to-armeria-brass/80"
     },
     {
       title: "Componenti",
       description: "Tutti i componenti per la fabbricazione",
-      icon: Hammer,
+      icon: Component,
       link: "/components",
       color: "bg-gradient-to-br from-armeria-brass/80 to-armeria-wood/90"
     },
     {
       title: "Materiali",
       description: "Listino dei materiali necessari",
-      icon: Package,
+      icon: Box,
       link: "/materials",
       color: "bg-gradient-to-br from-armeria-dark to-armeria-wood"
     }
@@ -60,7 +60,7 @@ const Index = () => {
             <div className="flex gap-2">
               <Input
                 type="text"
-                placeholder="Cerca armi, componenti, materiali..."
+                placeholder="Ricerca"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="flex-grow bg-white/80 border-armeria-brass/30"
@@ -77,7 +77,7 @@ const Index = () => {
               <span className="header-decoration">Armeria dei fratelli Becker</span>
             </h1>
             <p className="text-lg text-armeria-dark/80 max-w-2xl mx-auto">
-              Il catalogo completo di armi, componenti e materiali per i tuoi progetti
+              Database Armeria Becker
             </p>
           </div>
           

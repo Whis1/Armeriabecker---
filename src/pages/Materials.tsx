@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const Materials = () => {
+  // Sort materials alphabetically by name
+  const sortedMaterials = [...materials].sort((a, b) => a.name.localeCompare(b.name));
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -28,7 +31,7 @@ const Materials = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {materials.map((material, index) => (
+                  {sortedMaterials.map((material, index) => (
                     <tr key={material.id} className={index % 2 === 0 ? 'bg-transparent' : 'bg-armeria-brass/5'}>
                       <td className="px-4 py-3 text-left flex items-center">
                         <Box className="h-4 w-4 mr-2 text-armeria-wood/70" />
