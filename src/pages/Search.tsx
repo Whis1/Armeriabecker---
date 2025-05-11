@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { searchItems } from '@/services/searchService';
+import { getMaterialById, getComponentById } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Search as SearchIcon } from 'lucide-react';
@@ -42,6 +43,11 @@ const Search = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // La ricerca è già stata eseguita attraverso l'useEffect
+  };
+  
+  const formatMaterialName = (id: string) => {
+    const material = getMaterialById(id);
+    return material ? material.name : id;
   };
   
   const getCategoryName = (category: string) => {
