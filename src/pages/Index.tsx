@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Axe, Hammer, Package, Search, Bullet } from 'lucide-react';
+import { Axe, Hammer, Package, Search, Crosshair } from 'lucide-react';
 
 const Index = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +23,7 @@ const Index = () => {
     {
       title: "Munizioni",
       description: "Munizioni per tutte le armi",
-      icon: Bullet,
+      icon: Crosshair,
       link: "/ammo",
       color: "bg-gradient-to-br from-armeria-dark to-armeria-brass/80"
     },
