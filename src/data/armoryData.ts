@@ -125,7 +125,7 @@ export const components: ComponentType[] = [
 export const weapons: WeaponType[] = [
   {
     id: "revolver_double_action",
-    name: "Double Action Revolver",
+    name: "Revolver Double Action",
     components: [
       { componentId: "processed_minerals", quantity: 5 },
       { componentId: "work_tools_1", quantity: 5 },
@@ -158,7 +158,7 @@ export const weapons: WeaponType[] = [
 export const ammo: AmmoType[] = [
   {
     id: "revolver_ammo",
-    name: "Revolver Ammo",
+    name: "Revolver Ammo Normal",
     count: 50,
     materials: [
       { materialId: "scrap", quantity: 10 },
@@ -168,7 +168,7 @@ export const ammo: AmmoType[] = [
   },
   {
     id: "repeater_ammo",
-    name: "Repeater Ammo",
+    name: "Repeater Ammo Normal",
     count: 30,
     materials: [
       { materialId: "scrap", quantity: 30 },
