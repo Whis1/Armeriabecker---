@@ -1,4 +1,3 @@
-
 import { MaterialType, ComponentType, WeaponType, AmmoType } from "../types";
 
 export const materials: MaterialType[] = [
@@ -131,7 +130,7 @@ export const weapons: WeaponType[] = [
       { componentId: "work_tools_1", quantity: 5 },
       { componentId: "maintenance_kit", quantity: 1 },
     ],
-    image: "/revolver.png"
+    image: "/lovable-uploads/c752b981-0bc3-4f4e-8eb2-be0e4aa5a532.png"
   },
   {
     id: "carbine_repeater",
@@ -141,7 +140,7 @@ export const weapons: WeaponType[] = [
       { componentId: "work_tools_1", quantity: 10 },
       { componentId: "maintenance_kit", quantity: 10 },
     ],
-    image: "/carbine.png"
+    image: "/lovable-uploads/842da643-7ac5-4cbd-89d0-32cd253550ab.png"
   },
   {
     id: "henry_repeater",
@@ -151,7 +150,7 @@ export const weapons: WeaponType[] = [
       { componentId: "work_tools_1", quantity: 30 },
       { componentId: "maintenance_kit", quantity: 10 },
     ],
-    image: "/henry.png"
+    image: "/lovable-uploads/f5c6010c-5a64-4220-aecb-1d21569d7a6b.png"
   }
 ];
 
