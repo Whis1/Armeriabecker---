@@ -24,17 +24,24 @@ const Search = () => {
     }
   }, [location.search]);
   
+  // Ricerca istantanea mentre l'utente digita
+  useEffect(() => {
+    if (searchTerm.length > 0) {
+      const searchResults = searchItems(searchTerm);
+      setResults(searchResults);
+      
+      // Aggiorna l'URL con il termine di ricerca
+      const params = new URLSearchParams();
+      params.set('q', searchTerm);
+      window.history.replaceState({}, '', `${location.pathname}?${params}`);
+    } else {
+      setResults([]);
+    }
+  }, [searchTerm, location.pathname]);
+  
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    const searchResults = searchItems(searchTerm);
-    setResults(searchResults);
-    
-    // Update URL with search query
-    const params = new URLSearchParams();
-    if (searchTerm) {
-      params.set('q', searchTerm);
-      window.history.pushState({}, '', `${location.pathname}?${params}`);
-    }
+    // La ricerca è già stata eseguita attraverso l'useEffect
   };
   
   const getCategoryName = (category: string) => {
@@ -65,6 +72,7 @@ const Search = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="flex-grow bg-white/80"
+                autoFocus
               />
               <Button type="submit" className="bg-armeria-wood hover:bg-armeria-wood/80">
                 <SearchIcon className="h-4 w-4 mr-2" />

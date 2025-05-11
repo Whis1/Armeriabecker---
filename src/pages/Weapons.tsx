@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { weapons, getComponentById } from '@/data/armoryData';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -44,11 +44,6 @@ const Weapons = () => {
                     </ul>
                   </div>
                 </CardContent>
-                <CardFooter className="pt-0 pb-4 px-4">
-                  <Button asChild variant="outline" className="w-full border-armeria-brass hover:bg-armeria-brass/10">
-                    <Link to={`/weapon/${weapon.id}`}>Dettagli</Link>
-                  </Button>
-                </CardFooter>
               </Card>
             ))}
           </div>

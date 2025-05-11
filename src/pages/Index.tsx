@@ -71,38 +71,6 @@ const Index = () => {
           </div>
         </section>
         
-        <section className="text-center mb-12 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          <h2 className="text-3xl font-serif font-bold mb-6 text-armeria-wood">
-            <span className="header-decoration">Le Nostre Specialità</span>
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="vintage-card flex flex-col items-center p-6">
-              <div className="wood-panel w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Axe className="h-8 w-8" />
-              </div>
-              <h3 className="font-serif font-bold text-xl mb-2">Revolver Double Action</h3>
-              <p className="text-armeria-dark/80">Precisione e affidabilità in un design classico</p>
-            </div>
-            
-            <div className="vintage-card flex flex-col items-center p-6">
-              <div className="wood-panel w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Axe className="h-8 w-8" />
-              </div>
-              <h3 className="font-serif font-bold text-xl mb-2">Carabine Repeater</h3>
-              <p className="text-armeria-dark/80">Potenza e velocità per ogni situazione</p>
-            </div>
-            
-            <div className="vintage-card flex flex-col items-center p-6">
-              <div className="wood-panel w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Axe className="h-8 w-8" />
-              </div>
-              <h3 className="font-serif font-bold text-xl mb-2">Henry Repeater</h3>
-              <p className="text-armeria-dark/80">Il massimo dell'artigianato e delle prestazioni</p>
-            </div>
-          </div>
-        </section>
-        
         <section className="text-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <div className="vintage-card p-8">
             <h2 className="text-3xl font-serif font-bold mb-4 text-armeria-wood">Esplora il Database</h2>
