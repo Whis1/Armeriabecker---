@@ -9,7 +9,7 @@ export const searchItems = (query: string) => {
   const items = getAllItems();
   const lowerQuery = query.toLowerCase().trim();
   
-  // Filtra gli elementi che iniziano con la query o la contengono
+  // Trova elementi al primo carattere digitato
   return items.filter(item => {
     const itemName = item.name.toLowerCase();
     // Priorità agli elementi che iniziano con la query
